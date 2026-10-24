@@ -1,0 +1,11 @@
+{
+  "name": "location-trigger",
+  "private": true,
+  "description": "Clock in and out of the company ERP from iOS Shortcuts location automations and Scriptable",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
