@@ -58,9 +58,9 @@ test('saveSettings refuses a password, which belongs in the Keychain', () => {
   assert.throws(() => storage.saveSettings({ ...SETTINGS, password: 'x' }), /Keychain/);
 });
 
-test('loadState starts empty and round-trips', () => {
+test('loadState is null before the first save, then round-trips', () => {
   const storage = createStorage({ fm: fakeFileManager(), keychain: fakeKeychain() });
-  assert.deepEqual(storage.loadState(), emptyState());
+  assert.equal(storage.loadState(), null);
   const s = { ...emptyState(), flow1: 'ok', lastResetAt: 1, lastEnterAt: 2 };
   storage.saveState(s);
   assert.deepEqual(storage.loadState(), s);
